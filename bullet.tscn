@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c2wki4n6ojnta"]
+
+[ext_resource type="Script" uid="uid://bfdnby8hj4qj3" path="res://bullet.gd" id="1_v8qja"]
+[ext_resource type="ArrayMesh" uid="uid://csbfl7r3u14mp" path="res://Models/Weapon/ammo_pistol.obj" id="2_t4vbm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bhunq"]
+radius = 0.0034179688
+height = 0.0121536255
+
+[node name="Bullet" type="Area3D" unique_id=877523831]
+script = ExtResource("1_v8qja")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=93919549]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 9.610058e-08, -0.004322827)
+shape = SubResource("CapsuleShape3D_bhunq")
+
+[node name="AmmoPistol" type="MeshInstance3D" parent="." unique_id=1008148119]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 0, 0)
+mesh = ExtResource("2_t4vbm")
+
+[node name="DestroyTimer" type="Timer" parent="." unique_id=598413979]
+wait_time = 0.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]
