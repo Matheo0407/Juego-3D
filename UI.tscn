@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://d1ci0c23kkycl"]
+
+[ext_resource type="Script" uid="uid://dg1lydxnhb4yk" path="res://control.gd" id="1_2gckq"]
+[ext_resource type="Texture2D" uid="uid://bjkyjpsdsyees" path="res://images__3_-removebg-preview.png" id="2_g5u85"]
+[ext_resource type="Script" uid="uid://digde8dj2atn6" path="res://touch_screen_button.gd" id="2_q780r"]
+[ext_resource type="Texture2D" uid="uid://cnk0xmvjebd5p" path="res://arrow-rounded-icon-vector-illustration-260nw-567999181__1_-removebg-preview.png" id="3_2gckq"]
+[ext_resource type="Texture2D" uid="uid://0gnl4aol6r5t" path="res://png-transparent-computer-icons-speed-speed-miscellaneous-text-logo-removebg-preview.png" id="3_g5u85"]
+[ext_resource type="FontFile" uid="uid://x1kp84f5bvka" path="res://Font/Ubuntu-Regular.ttf" id="7_35xyp"]
+[ext_resource type="Texture2D" uid="uid://d23abshhcusvi" path="res://UI/Crosshair.png" id="7_i3ln2"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bhunq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_riqys"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6v0qg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1370728642]
+
+[node name="ProgressBar2" type="ProgressBar" parent="." unique_id=1094360431]
+offset_left = 63.0
+offset_top = 103.0
+offset_right = 67.0
+offset_bottom = 130.0
+scale = Vector2(2.766156, 2.9377863)
+theme_override_fonts/font = ExtResource("7_35xyp")
+step = 0.0
+value = 100.0
+
+[node name="Control" type="Control" parent="." unique_id=471561629]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 9.000008
+offset_top = 7.000061
+offset_right = 49.000008
+offset_bottom = 47.00006
+scale = Vector2(-0.12786101, 0.4218882)
+script = ExtResource("1_2gckq")
+
+[node name="VirtualJoystickDX" type="VirtualJoystick" parent="Control" unique_id=1558269681]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -1423.4204
+offset_top = 1000.5598
+offset_right = -1123.4204
+offset_bottom = 1300.5598
+grow_vertical = 0
+scale = Vector2(7.079867, 2.172551)
+pivot_offset = Vector2(150, 150)
+mouse_filter = 1
+joystick_size = 306.0
+tip_size = 180.0
+clampzone_ratio = 1.05
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="." unique_id=84358771]
+position = Vector2(1225, 387)
+scale = Vector2(0.50306857, 0.34068465)
+texture_normal = ExtResource("2_g5u85")
+action = "shoot_mobile"
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="TouchScreenButton2" unique_id=1455075190]
+modulate = Color(0.16862746, 0.16862746, 0.16862746, 0.27058825)
+self_modulate = Color(0.30692267, 0.3069227, 0.3069227, 1)
+position = Vector2(182.87769, 264.17395)
+rotation = 3.1415927
+scale = Vector2(454.89056, -655.59)
+mesh = SubResource("SphereMesh_bhunq")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1989553669]
+position = Vector2(903, 301)
+texture_normal = ExtResource("3_2gckq")
+action = "jump"
+script = ExtResource("2_q780r")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="TouchScreenButton" unique_id=1419052715]
+modulate = Color(0, 0, 0, 0.19607843)
+light_mask = 0
+visibility_layer = 2
+position = Vector2(130, 132)
+scale = Vector2(-210.14255, -211.57233)
+mesh = SubResource("SphereMesh_riqys")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="TouchScreenButton" unique_id=1189063267]
+position = Vector2(275, -129.99997)
+scale = Vector2(0.4001026, 0.4468739)
+texture_normal = ExtResource("3_g5u85")
+action = "dash"
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="TouchScreenButton/TouchScreenButton" unique_id=1078689456]
+modulate = Color(0, 0, 0, 0.19607843)
+light_mask = 0
+visibility_layer = 2
+position = Vector2(329.91547, 179.0214)
+scale = Vector2(-548.5548, -299.9698)
+mesh = SubResource("QuadMesh_6v0qg")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1454465635]
+offset_left = 62.0
+offset_top = 27.0
+offset_right = 66.0
+offset_bottom = 54.0
+scale = Vector2(2.766156, 2.9377863)
+theme_override_fonts/font = ExtResource("7_35xyp")
+step = 0.0
+value = 100.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2142277038]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_i3ln2")
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="." unique_id=175272814]
+action = "ui_text_caret_left"
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="TouchScreenButton3" unique_id=292712361]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(574, 307.00003)
+scale = Vector2(1149.5, 621.5)
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="TouchPadCamara" type="Button" parent="." unique_id=225971075]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 311.0
+offset_top = 15.0
+offset_right = 319.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-111.07228, 0.9666309)
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+theme_override_colors/font_focus_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
+flat = true

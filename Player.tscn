@@ -31,4 +31,4 @@ transform = Transform3D(-10, 0, -1.6353304e-06, 0, 21.678, 0, 8.742278e-07, 0, -
 mesh = ExtResource("1_xhfnw")
 
 [node name="Node3D" type="Node3D" parent="CameraOrbit/Camera3D/Gun" unique_id=1893187823]
-transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, -7.1054274e-15, 0, 1, -7.450581e-09, 0.0068541765, 0.04212822)
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 3.5527137e-15, 0, 1, 0.05, 0.021, 0.001)
