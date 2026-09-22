@@ -80,6 +80,20 @@ shape = SubResource("ConcavePolygonShape3D_p1v5b")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Modelos/Ground/StaticBody3D2" unique_id=96124201]
 shape = SubResource("ConcavePolygonShape3D_eu7l1")
 
+[node name="Ground2" type="MeshInstance3D" parent="Modelos" unique_id=1144866079]
+transform = Transform3D(2.7085905, 0, 0, 0, 0.86602527, 1.7378678, 0, -0.5, 3.0100756, 0.03423083, 5.1255627, 8.964147)
+mesh = ExtResource("1_bcbcq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Modelos/Ground2" unique_id=1461684561]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Modelos/Ground2/StaticBody3D" unique_id=1659688536]
+shape = SubResource("ConcavePolygonShape3D_p1v5b")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Modelos/Ground2" unique_id=607570235]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Modelos/Ground2/StaticBody3D2" unique_id=1993879985]
+shape = SubResource("ConcavePolygonShape3D_eu7l1")
+
 [node name="Tree1" type="MeshInstance3D" parent="Modelos" unique_id=200553141]
 transform = Transform3D(0.38157526, 0, 0, 0, 1, 0, 0, 0, 0.32238162, 0.28918907, 0, -0.3413393)
 mesh = ExtResource("2_js7pq")

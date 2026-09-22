@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://x1kp84f5bvka"
-path="res://.godot/imported/Ubuntu-Regular.ttf-d41147e3bf9d84cc30b7feb238accd5e.fontdata"
+uid="uid://8mcm2neyx4nu"
+path="res://.godot/imported/VCR_OSD_MONO.ttf-d538a45e955627675580389f455e9362.fontdata"
 
 [deps]
 
-source_file="res://Font/Ubuntu-Regular.ttf"
-dest_files=["res://.godot/imported/Ubuntu-Regular.ttf-d41147e3bf9d84cc30b7feb238accd5e.fontdata"]
+source_file="res://Font/VCR_OSD_MONO.ttf"
+dest_files=["res://.godot/imported/VCR_OSD_MONO.ttf-d538a45e955627675580389f455e9362.fontdata"]
 
 [params]
 

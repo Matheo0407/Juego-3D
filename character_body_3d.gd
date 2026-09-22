@@ -17,7 +17,7 @@ var barra_municion: Node = null
 # --- VARIABLES DE MOVIMIENTO Y CAMARA ---
 var sens_X = 0.08
 var sens_Y = 0.08
-const SPEED = 10.0
+const SPEED = 13.0
 const JUMP_VELOCITY = 6.0
 @onready var camara: Camera3D = $CameraOrbit/Camera3D
 @onready var pivote = get_node("CameraOrbit/Camera3D/Gun/Node3D")
@@ -87,8 +87,8 @@ func _ready():
 	# 4. Inicialización de componentes gráficos
 	add_to_group("player")
 	
-	barra_vida = get_node_or_null("/root/World/CanvasLayer2/ProgressBar")
-	barra_municion = get_node_or_null("/root/World/CanvasLayer2/ProgressBar2")
+	barra_vida = get_node_or_null("/root/World/CanvasLayer/ProgressBar")
+	barra_municion = get_node_or_null("/root/World/CanvasLayer/ProgressBar2")
 	
 	if barra_vida:
 		barra_vida.min_value = 0
@@ -207,7 +207,7 @@ func disparar():
 		var bullet = bulletScene.instantiate()
 		get_tree().get_root().add_child(bullet)
 		bullet.global_transform = pivote.global_transform
-		bullet.scale = Vector3.ONE
+		bullet.scale = Vector3(3, 3, 3)
 		ammo -= 1
 		if barra_municion:
 			barra_municion.value = ammo

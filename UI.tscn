@@ -1,32 +1,50 @@
 [gd_scene format=3 uid="uid://d1ci0c23kkycl"]
 
 [ext_resource type="Script" uid="uid://dg1lydxnhb4yk" path="res://control.gd" id="1_2gckq"]
-[ext_resource type="Texture2D" uid="uid://bjkyjpsdsyees" path="res://images__3_-removebg-preview.png" id="2_g5u85"]
+[ext_resource type="FontFile" uid="uid://8mcm2neyx4nu" path="res://Font/VCR_OSD_MONO.ttf" id="1_2n5f6"]
+[ext_resource type="Script" uid="uid://dveguacnf8jft" path="res://progress_bar_2.gd" id="2_q77pa"]
 [ext_resource type="Script" uid="uid://digde8dj2atn6" path="res://touch_screen_button.gd" id="2_q780r"]
 [ext_resource type="Texture2D" uid="uid://cnk0xmvjebd5p" path="res://arrow-rounded-icon-vector-illustration-260nw-567999181__1_-removebg-preview.png" id="3_2gckq"]
+[ext_resource type="Texture2D" uid="uid://c1ev2cshy2n5" path="res://shoot.png" id="3_2n5f6"]
 [ext_resource type="Texture2D" uid="uid://0gnl4aol6r5t" path="res://png-transparent-computer-icons-speed-speed-miscellaneous-text-logo-removebg-preview.png" id="3_g5u85"]
-[ext_resource type="FontFile" uid="uid://x1kp84f5bvka" path="res://Font/Ubuntu-Regular.ttf" id="7_35xyp"]
+[ext_resource type="Script" uid="uid://clgudu1vgct42" path="res://touch_screen_button_2.gd" id="4_27c8x"]
 [ext_resource type="Texture2D" uid="uid://d23abshhcusvi" path="res://UI/Crosshair.png" id="7_i3ln2"]
+[ext_resource type="Script" uid="uid://e7nt3wu5364a" path="res://progress_bar.gd" id="9_n8582"]
+[ext_resource type="Script" uid="uid://bwmqtnxnq0iuv" path="res://progress_bar_3.gd" id="11_c6dx3"]
+[ext_resource type="Script" uid="uid://dnywfyte3v545" path="res://progress_bar_4.gd" id="12_jqn02"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_bhunq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6dx3"]
+bg_color = Color(0.50840265, 0.50805295, 3.85046e-07, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
 
 [sub_resource type="SphereMesh" id="SphereMesh_riqys"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_6v0qg"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqn02"]
+bg_color = Color(8.567274e-06, 0.5299679, 0.101465456, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1370728642]
 
 [node name="ProgressBar2" type="ProgressBar" parent="." unique_id=1094360431]
-offset_left = 63.0
-offset_top = 103.0
-offset_right = 67.0
-offset_bottom = 130.0
+offset_left = 53.0
+offset_top = 428.0
+offset_right = 173.38367
+offset_bottom = 455.0
 scale = Vector2(2.766156, 2.9377863)
-theme_override_fonts/font = ExtResource("7_35xyp")
+theme_override_fonts/font = ExtResource("1_2n5f6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c6dx3")
+max_value = 10.0
 step = 0.0
-value = 100.0
+value = 10.0
+script = ExtResource("2_q77pa")
 
 [node name="Control" type="Control" parent="." unique_id=471561629]
 layout_mode = 3
@@ -57,21 +75,14 @@ tip_size = 180.0
 clampzone_ratio = 1.05
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="." unique_id=84358771]
-position = Vector2(1225, 387)
-scale = Vector2(0.50306857, 0.34068465)
-texture_normal = ExtResource("2_g5u85")
+position = Vector2(998, 279.00003)
+scale = Vector2(1.3946737, 1.4151286)
+texture_normal = ExtResource("3_2n5f6")
 action = "shoot_mobile"
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="TouchScreenButton2" unique_id=1455075190]
-modulate = Color(0.16862746, 0.16862746, 0.16862746, 0.27058825)
-self_modulate = Color(0.30692267, 0.3069227, 0.3069227, 1)
-position = Vector2(182.87769, 264.17395)
-rotation = 3.1415927
-scale = Vector2(454.89056, -655.59)
-mesh = SubResource("SphereMesh_bhunq")
+script = ExtResource("4_27c8x")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1989553669]
-position = Vector2(903, 301)
+position = Vector2(743, 254)
 texture_normal = ExtResource("3_2gckq")
 action = "jump"
 script = ExtResource("2_q780r")
@@ -99,14 +110,17 @@ scale = Vector2(-548.5548, -299.9698)
 mesh = SubResource("QuadMesh_6v0qg")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1454465635]
-offset_left = 62.0
-offset_top = 27.0
-offset_right = 66.0
-offset_bottom = 54.0
+offset_left = 48.0
+offset_top = 524.0
+offset_right = 168.02216
+offset_bottom = 551.0
 scale = Vector2(2.766156, 2.9377863)
-theme_override_fonts/font = ExtResource("7_35xyp")
+theme_override_fonts/font = ExtResource("1_2n5f6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jqn02")
 step = 0.0
 value = 100.0
+fill_mode = 1
+script = ExtResource("9_n8582")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2142277038]
 anchors_preset = 8
@@ -121,16 +135,6 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_i3ln2")
-
-[node name="TouchScreenButton3" type="TouchScreenButton" parent="." unique_id=175272814]
-action = "ui_text_caret_left"
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="TouchScreenButton3" unique_id=292712361]
-modulate = Color(1, 1, 1, 0)
-self_modulate = Color(1, 1, 1, 0)
-position = Vector2(574, 307.00003)
-scale = Vector2(1149.5, 621.5)
-mesh = SubResource("BoxMesh_bhunq")
 
 [node name="TouchPadCamara" type="Button" parent="." unique_id=225971075]
 modulate = Color(1, 1, 1, 0)
@@ -161,3 +165,29 @@ theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
 flat = true
+
+[node name="ProgressBar3" type="ProgressBar" parent="." unique_id=1509715914]
+offset_left = 15.83078
+offset_top = 10.0
+offset_right = 136.21445
+offset_bottom = 37.0
+scale = Vector2(2.766156, 2.9377863)
+theme_override_fonts/font = ExtResource("1_2n5f6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c6dx3")
+max_value = 10.0
+step = 0.0
+value = 10.0
+script = ExtResource("11_c6dx3")
+
+[node name="ProgressBar4" type="ProgressBar" parent="." unique_id=316189643]
+offset_left = 16.0
+offset_top = 100.00001
+offset_right = 136.02216
+offset_bottom = 127.00001
+scale = Vector2(2.766156, 2.9377863)
+theme_override_fonts/font = ExtResource("1_2n5f6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jqn02")
+step = 0.0
+value = 100.0
+fill_mode = 1
+script = ExtResource("12_jqn02")

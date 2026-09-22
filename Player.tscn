@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhb7if7ymopeu"]
 
 [ext_resource type="Script" uid="uid://b42poyb8v3beg" path="res://character_body_3d.gd" id="1_kpjcp"]
-[ext_resource type="ArrayMesh" uid="uid://dgspyadovx63e" path="res://Models/Weapon/shotgun.obj" id="1_xhfnw"]
+[ext_resource type="PackedScene" uid="uid://cspr30shl36ae" path="res://Models/Weapon/caca.glb" id="3_kne1u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kpjcp"]
 
@@ -26,9 +26,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0034537315, 0.4566205, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010986328, 0)
 current = true
 
-[node name="Gun" type="MeshInstance3D" parent="CameraOrbit/Camera3D" unique_id=220410967]
-transform = Transform3D(-10, 0, -1.6353304e-06, 0, 21.678, 0, 8.742278e-07, 0, -18.706, 0.5, -0.5, -0.83998424)
-mesh = ExtResource("1_xhfnw")
+[node name="Gun" parent="CameraOrbit/Camera3D" unique_id=1696733714 instance=ExtResource("3_kne1u")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, -0.5, -0.84)
 
 [node name="Node3D" type="Node3D" parent="CameraOrbit/Camera3D/Gun" unique_id=1893187823]
-transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 3.5527137e-15, 0, 1, 0.05, 0.021, 0.001)
+transform = Transform3D(-9.999998, 0, -1.6353304e-06, 0, 21.678, 0, 8.742275e-07, 0, -18.706, -1.0039194, 1.132858, -0.9823072)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=12073385]
+transform = Transform3D(0.056145705, 0, -0.99842256, 0, 1, 0, 0.99842256, 0, 0.056145705, 0, 0, -3.4130015)

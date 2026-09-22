@@ -1,6 +1,6 @@
 extends CharacterBody3D
 var salud = 0
-var velMov = 1
+var velMov = 2
 
 var damage = 10
 var attackRate = 1
